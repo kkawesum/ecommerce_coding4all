@@ -15,7 +15,7 @@ def login_page(request):
             messages.warning(request,'Profile not found')
             return HttpResponseRedirect(redirect_to=request.path_info)
         
-        if not user_obj[0].is_email_verified:
+        if not user_obj[0].profile.is_email_verified:
             messages.warning(request,'Your account is not verified')
             return HttpResponseRedirect(redirect_to=request.path_info)
         
